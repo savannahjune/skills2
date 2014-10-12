@@ -10,11 +10,11 @@ the value
 Bonus: do the same for a file (i.e. twain.txt)
 """
 
-# if you change to items in item, you can count characters instead!
+# can use item in items to count individual letters
 def count_unique(string1):
     uniquedict = {}
-    for item in string1:
-    	if word not in words:
+    for word in words:
+    	if word not in uniquedict:
     		uniquedict[word] = 1
     	else: 
     		uniquedict[word] += 1
@@ -26,10 +26,34 @@ Given two lists, (without using the keywords 'if __ in ____' or the method 'inde
 return a list of all common items shared between both lists
 """
 def common_items(list1, list2):
-    pass
+    uniquedict1 = {}
+    uniquedict2 = {}
+    commondict = {}
+    for item in list1:
+    	if item not in uniquedict1:
+    		uniquedict1[item] = 1
+    	else: 
+    		uniquedict1[item] += 1
+    print uniquedict1
+    for item in list2:
+    	if item not in uniquedict2:
+    		uniquedict2[item] = 1
+    	else: 
+    		uniquedict2[item] += 1
+    print uniquedict2
+
+    for key in uniquedict1:
+    	if key in uniquedict2:
+    		commondict[key] = 1
+    	else:
+    		continue
+    print commondict.keys()
+common_items(list1, list2)
+
+
 
 """
-Given two lists, (without using 'if __ in ____' or 'index')
+Given two lists, (without using 'if __ in ____' or 'index'
 return a list of all common items shared between both lists. This time,
 use a dictionary as part of your solution.
 """
@@ -82,3 +106,6 @@ man         matey
 Write a program that asks the user to type in a sentence and then
 print the sentece translated to pirate.
 """
+
+def pirate_translate():
+	pass
