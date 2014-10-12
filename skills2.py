@@ -14,10 +14,10 @@ Bonus: do the same for a file (i.e. twain.txt)
 def count_unique(string1):
     uniquedict = {}
     for word in words:
-    	if word not in uniquedict:
-    		uniquedict[word] = 1
-    	else: 
-    		uniquedict[word] += 1
+        if word not in uniquedict:
+            uniquedict[word] = 1
+        else: 
+            uniquedict[word] += 1
     return uniquedict
 count_unique(string1)
 
@@ -30,30 +30,30 @@ def common_items(list1, list2):
 #     uniquedict2 = {}
 #     commondict = {}
 #     for item in list1:
-#     	if item not in uniquedict1:
-#     		uniquedict1[item] = 1
-#     	else: 
-#     		uniquedict1[item] += 1
+#       if item not in uniquedict1:
+#           uniquedict1[item] = 1
+#       else: 
+#           uniquedict1[item] += 1
  
 #     for item in list2:
-#     	if item not in uniquedict2:
-#     		uniquedict2[item] = 1
-#     	else: 
-#     		uniquedict2[item] += 1
+#       if item not in uniquedict2:
+#           uniquedict2[item] = 1
+#       else: 
+#           uniquedict2[item] += 1
 
 #     for key in uniquedict1:
-#     	if key in uniquedict2:
-#     		commondict[key] = 1
-#     	else:
-#     		continue
+#       if key in uniquedict2:
+#           commondict[key] = 1
+#       else:
+#           continue
 #     return commondict.keys()
 # common_items(list1, list2)
 
 # learning to use set 
 
-	uniquelist1 = set(list1)
-	uniquelist2 = set(list2)
-	return list(uniquelist1 & uniquelist2)
+    uniquelist1 = set(list1)
+    uniquelist2 = set(list2)
+    return list(uniquelist1 & uniquelist2)
 # print common_items(list1, list2)
 
 """
@@ -66,23 +66,23 @@ def common_items2(list1, list2):
     uniquedict2 = {}
     commondict = {}
     for item in list1:
-    	if item not in uniquedict1:
-    		uniquedict1[item] = 1
-    	else: 
-    		uniquedict1[item] += 1
+        if item not in uniquedict1:
+            uniquedict1[item] = 1
+        else: 
+            uniquedict1[item] += 1
     print uniquedict1
     for item in list2:
-    	if item not in uniquedict2:
-    		uniquedict2[item] = 1
-    	else: 
-    		uniquedict2[item] += 1
+        if item not in uniquedict2:
+            uniquedict2[item] = 1
+        else: 
+            uniquedict2[item] += 1
     print uniquedict2
 
     for key in uniquedict1:
-    	if key in uniquedict2:
-    		commondict[key] = 1
-    	else:
-    		continue
+        if key in uniquedict2:
+            commondict[key] = 1
+        else:
+            continue
     return commondict.keys()
 common_items(list1, list2)
 
@@ -92,9 +92,9 @@ Given a list of numbers, return list of number pairs that sum to zero
 def sum_zero(list1):
     sumzerolist = []
     for i in range(len(list1)):
-    	for index in range(len(list1[i:])):
-    		if list1[i] + list1[index] == 0:
-    			sumzerolist.append((list1[i], list1[index]))
+        for index in range(len(list1[i:])):
+            if list1[i] + list1[index] == 0:
+                sumzerolist.append((list1[i], list1[index]))
     return sumzerolist
 
 # print sum_zero(list1)
@@ -121,32 +121,23 @@ def word_length(words):
     # it's very luck that green eggs and ham ascends in length of word by its nature
 
     for item in words:
-    	word_dict[item] = len(item)
+        word_dict[item] = len(item)
     for key, value in word_dict.iteritems():
-    	opp_word_dict[value] = opp_word_dict.get(value, []) + [key]
+        opp_word_dict[value] = opp_word_dict.get(value, []) + [key]
 
-    return opp_word_dict
+    # return opp_word_dict
 
-    	# if value not in opp_word_dict:
-    	# 	opp_word_dict[value] = [key]
-    	# else:
-    	# 	opp_word_dict[value].append(key)
+        # if value not in opp_word_dict:
+        #   opp_word_dict[value] = [key]
+        # else:
+        #   opp_word_dict[value].append(key)
+    opp_word_dict_keys = opp_word_dict.keys()
+    opp_word_dict_keys.sort()
 
-
-   	# print opp_word_dict
-  
-
-    # for i range(len(word_dict)):
-    # 	word = word_dict[i][0]
-    # 	count = word_dict[i][1]
-    # 	word_dict_tuple_time.append((count, word))
-
-    # sort_word_dict = sorted(word_dict_tuple_time)
-
-    # for i in range(len(sort_word_dict)):
-    	# print sort_word_dict[i][1], sort_word_dict[i][0]
-
-print word_length(words)
+    for key in opp_word_dict_keys:
+        value = opp_word_dict[key]
+        print key, value
+word_length(words)
 
 
 """
@@ -177,4 +168,4 @@ print the sentece translated to pirate.
 """
 
 def pirate_translate():
-	pass
+    pass
