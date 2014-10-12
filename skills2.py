@@ -97,12 +97,8 @@ def sum_zero(list1):
     			sumzerolist.append((list1[i], list1[index]))
     return sumzerolist
 
-    # newlist = [number*-1 for number in list1]
-    # return newlist
+# print sum_zero(list1)
 
-print sum_zero(list1)
-
-# sum_zero(list1)
 
 """
 Given a list of words, return a list of words with duplicates removed
@@ -119,15 +115,26 @@ Bonus: print the words in alphabetical order in ascending order of length
 """
 def word_length(words):
     word_dict = {}
+    opp_word_dict = {}
 
     # make dictionary with words as keys and value is length of word
+    # it's very luck that green eggs and ham ascends in length of word by its nature
 
     for item in words:
     	word_dict[item] = len(item)
+    for key, value in word_dict.iteritems():
+    	opp_word_dict[value] = opp_word_dict.get(value, []) + [key]
 
-    print word_dict
-    word_dict_list_of_tuples = word_dict.items()
-    word_dict_tuple_time = []
+    return opp_word_dict
+
+    	# if value not in opp_word_dict:
+    	# 	opp_word_dict[value] = [key]
+    	# else:
+    	# 	opp_word_dict[value].append(key)
+
+
+   	# print opp_word_dict
+  
 
     # for i range(len(word_dict)):
     # 	word = word_dict[i][0]
@@ -139,7 +146,7 @@ def word_length(words):
     # for i in range(len(sort_word_dict)):
     	# print sort_word_dict[i][1], sort_word_dict[i][0]
 
-word_length(words)
+print word_length(words)
 
 
 """
