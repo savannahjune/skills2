@@ -87,9 +87,10 @@ Given a list of numbers, return list of number pairs that sum to zero
 def sum_zero(list1):
     sumzerolist = []
     i = 0
-    for i in list1:
-    	if number[i] + number[i +1] == 0:
-    		sumzerolist.append(number[i], number[i+1])
+    for item in list1:
+    	if list1[i] + list1[i + 1] == 0:
+    		sumzerolist.append(list1[i])
+    		sumzerolist.append(list1[i+1])
     	else:
     		i += 1
     print sumzerolist
