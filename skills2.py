@@ -26,30 +26,35 @@ Given two lists, (without using the keywords 'if __ in ____' or the method 'inde
 return a list of all common items shared between both lists
 """
 def common_items(list1, list2):
-    uniquedict1 = {}
-    uniquedict2 = {}
-    commondict = {}
-    for item in list1:
-    	if item not in uniquedict1:
-    		uniquedict1[item] = 1
-    	else: 
-    		uniquedict1[item] += 1
+#     uniquedict1 = {}
+#     uniquedict2 = {}
+#     commondict = {}
+#     for item in list1:
+#     	if item not in uniquedict1:
+#     		uniquedict1[item] = 1
+#     	else: 
+#     		uniquedict1[item] += 1
  
-    for item in list2:
-    	if item not in uniquedict2:
-    		uniquedict2[item] = 1
-    	else: 
-    		uniquedict2[item] += 1
+#     for item in list2:
+#     	if item not in uniquedict2:
+#     		uniquedict2[item] = 1
+#     	else: 
+#     		uniquedict2[item] += 1
 
-    for key in uniquedict1:
-    	if key in uniquedict2:
-    		commondict[key] = 1
-    	else:
-    		continue
-    return commondict.keys()
-common_items(list1, list2)
+#     for key in uniquedict1:
+#     	if key in uniquedict2:
+#     		commondict[key] = 1
+#     	else:
+#     		continue
+#     return commondict.keys()
+# common_items(list1, list2)
 
+# learning to use set 
 
+	uniquelist1 = set(list1)
+	uniquelist2 = set(list2)
+	return list(uniquelist1 & uniquelist2)
+# print common_items(list1, list2)
 
 """
 Given two lists, (without using 'if __ in ____' or 'index'
@@ -86,21 +91,26 @@ Given a list of numbers, return list of number pairs that sum to zero
 """
 def sum_zero(list1):
     sumzerolist = []
-    i = 0
-    for item in list1:
-    	if list1[i] + list1[i + 1] == 0:
-    		sumzerolist.append(list1[i])
-    		sumzerolist.append(list1[i+1])
-    	else:
-    		i += 1
-    print sumzerolist
-sum_zero(list1)
+    for i in range(len(list1)):
+    	for index in range(len(list1[i:])):
+    		if list1[i] + list1[index] == 0:
+    			sumzerolist.append((list1[i], list1[index]))
+    return sumzerolist
+
+    # newlist = [number*-1 for number in list1]
+    # return newlist
+
+print sum_zero(list1)
+
+# sum_zero(list1)
 
 """
 Given a list of words, return a list of words with duplicates removed
 """
 def find_duplicates(words):
-    pass
+    return list(set(words))
+
+# print find_duplicates(words)
 
 """
 Given a list of words, print the words in ascending order of length
@@ -108,7 +118,29 @@ Bonus: do it on a file instead of the list provided
 Bonus: print the words in alphabetical order in ascending order of length
 """
 def word_length(words):
-    pass
+    word_dict = {}
+
+    # make dictionary with words as keys and value is length of word
+
+    for item in words:
+    	word_dict[item] = len(item)
+
+    print word_dict
+    word_dict_list_of_tuples = word_dict.items()
+    word_dict_tuple_time = []
+
+    # for i range(len(word_dict)):
+    # 	word = word_dict[i][0]
+    # 	count = word_dict[i][1]
+    # 	word_dict_tuple_time.append((count, word))
+
+    # sort_word_dict = sorted(word_dict_tuple_time)
+
+    # for i in range(len(sort_word_dict)):
+    	# print sort_word_dict[i][1], sort_word_dict[i][0]
+
+word_length(words)
+
 
 """
 Here's a table of English to Pirate translations
