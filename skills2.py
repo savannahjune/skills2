@@ -167,5 +167,33 @@ Write a program that asks the user to type in a sentence and then
 print the sentece translated to pirate.
 """
 
-def pirate_translate():
-    pass
+# 
+
+listwords = ['sir', 'hotel', 'student', 'boy', 'madam', 'professor']
+listpirate = ['matey', 'fleabag inn', 'swabbie', 'matey', 'proud beauty', 'foul blaggart']
+
+def pirate_translate(listwords, listpirate):
+
+    pirate_dict = {}
+
+    for i in range(len(listwords)):
+        pirate_dict[listwords[i]] = listpirate[i]
+    print pirate_dict
+
+    user_input = raw_input("What words do you want to piratize?")
+
+    words = user_input.split()
+
+    pirate_trans = []
+    
+    for word in words:
+        if pirate_dict.get(word, "found") == "found":
+            pirate_trans.append(word)
+        else:
+            pirate_trans.append(pirate_dict[word])
+
+    pirate_trans_done = " ".join(pirate_trans)
+
+    print pirate_trans_done
+
+pirate_translate(listwords, listpirate)
