@@ -137,7 +137,7 @@ def word_length(words):
     for key in opp_word_dict_keys:
         value = opp_word_dict[key]
         print key, value
-word_length(words)
+# word_length(words)
 
 
 """
@@ -194,6 +194,6 @@ def pirate_translate(listwords, listpirate):
 
     pirate_trans_done = " ".join(pirate_trans)
 
-    print pirate_trans_done
+    # print pirate_trans_done
 
-pirate_translate(listwords, listpirate)
+# pirate_translate(listwords, listpirate)
